@@ -7,7 +7,7 @@
 =====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: 开发者指南
 
    QuickStart.md
