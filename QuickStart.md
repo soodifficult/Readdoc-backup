@@ -34,7 +34,7 @@
 #### 1.3 设置InGateway连接Internet
 - 步骤1：将SIM卡插入卡槽（注意：插拔SIM卡操作时，必须拔掉电源，以免造成数据丢失或设备损坏）。插入SIM卡后将4G LTE天线与ANT口连接，接通InGateway设备的电源。
 
-  ![](./images/2019-11-29-16-18-51.png)  
+  ![](./images/2019-11-29-16-18-51.png) <br/>
  &nbsp;
 
 - 步骤2：进入“网络>>网络接口>>蜂窝网>>配置蜂窝网”页面，勾选“启用拨号”并点击提交。
@@ -276,7 +276,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 ### 7. 为APP更新配置文件
 - 步骤1：修改配置文件
   将App的“config.yaml”中的配置```description: "hello world!"```修改为:```description: "hello inhand!"```  
-![](./images/2019-12-05-14-54-34.png) 
+![](./images/2019-12-05-14-54-34.png) <br/>
  &nbsp;
 
 - 步骤2：导入配置文件并重启APP
