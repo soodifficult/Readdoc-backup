@@ -1,4 +1,4 @@
-# **第一章 快速入门**
+# **第一章 MobiusPi Python开发快速入门**
 
 ## 第一节 搭建开发环境
 ### 1. 准备InGateway硬件设备及其网络环境
@@ -98,7 +98,7 @@
 #### 3.3 配置工程模板
 ##### 3.3.1 使用映翰通标准工程模板
 - 步骤1：请从[这里](https://github.com/inhandnet/MobiuspiProjectTemplates/releases)下载MobiusPi工程模板。  
-MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工程模板的详细说明请参考[这里](https://github.com/inhandnet/MobiuspiProjectTemplates/blob/master/README.md)。本教程使用标准工程模板“helloworld-template”进行演示说明。  
+MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工程模板的详细说明请参考[README.md](https://github.com/inhandnet/MobiuspiProjectTemplates)。本教程使用标准工程模板“helloworld-template”进行演示说明。  
 ![](images/2019-12-25-09-39-17.png)
  &nbsp;
 
@@ -211,21 +211,23 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
  &nbsp;
 
   可以在TERMINAL窗口查看远程服务器是否已接收到相应的APP代码。在TERMINAL窗口输入以下命令查看已上传的APP文件夹信息：
+  ```
   >cd app  
   ls -l
-
+  ```
   ![](./images/2019-12-05-11-15-01.png)
  &nbsp;
 
 - 步骤2：在终端窗口调试脚本
   同步代码后在终端窗口输入如下命令在InGateway设备中立即执行脚本，执行脚本后在终端窗口查看执行结果：打印“hello world!”。
+  ```
   >python -m ptvsd --host 192.168.1.1 --port 3000 HelloWorld/src/main.py 
-
+  ```
   - `192.168.1.1`为InGateway设备FE 0/1口的IP地址
   - `3000`为建议的调试端口号
   - `HelloWorld/src/main.py`为mian. py的执行路径，请根据您的当前位置适当调整
 
-  InGateway设备的Python开发环境内置了ptvsd依赖库用于远程调试代码，想要了解更多ptvsd插件的用法，请访问[ptvsd使用说明](https://github.com/microsoft/ptvsd/blob/master/README.md)。
+  InGateway设备的Python开发环境内置了ptvsd依赖库用于远程调试代码，想要了解更多ptvsd插件的用法，请访问[ptvsd使用说明](https://github.com/microsoft/ptvsd/)。
   ![](images/2019-12-23-14-59-40.png)
  &nbsp;
 
@@ -307,10 +309,10 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
  &nbsp;
 
 - 步骤4：使用`export`命令为APP设置环境变量。在终端窗口执行以下命令
+  ```
   >export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/user/app/HelloWorld/lib/  
-
   >export PYTHONPATH=$PYTHONPATH:/var/user/app/HelloWorld/lib/
-
+  ```
   ![](images/2019-12-24-14-42-58.png)
  &nbsp;
 
