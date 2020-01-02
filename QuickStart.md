@@ -301,7 +301,9 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
  &nbsp;
 
 - 步骤2：执行pip install + “依赖库名称” + “==版本号” + “-t” + “APP的lib文件夹路径”命令并回车以安装相应依赖库。（不加版本号时pip会自动安装最新版的依赖库） 
-  >pip install modbus_tk==1.1.0 -t /var/user/app/HelloWorld/lib/
+  ```
+  pip install modbus_tk==1.1.0 -t /var/user/app/HelloWorld/lib/
+  ```
 
   ![](images/2019-12-24-14-37-38.png)
  &nbsp;
