@@ -12,7 +12,7 @@
      ![](./images/2019-11-07-10-36-47.png) <br/>
  &nbsp;
 
-  - 方法二：使用固定IP地址  
+  - 方法二：使用固定IP地址  <br/>
     设置PC和InGateway设备FE 0/1口处于同一网段。选择“使用下面的IP地址”，输入IP地址（默认为192.168.1.2~192.168.1.254中任意值）；子网掩码（默认255.255.255.0）；默认网关（默认为192.168.1.1）以及DNS服务器地址，单击<确定>。  
 
     ![](./images/2019-11-29-16-00-56.png)   
@@ -48,12 +48,12 @@
 
 #### 1.4 更新软件版本
 如需获取InGateway产品最新软件版本及其功能特性信息，请联系客服。如需更新InGateway设备的固件或Python SDK版本，请参考如下方法。
-- 更新InGateway设备固件版本  
+- 更新InGateway设备固件版本  <br/>
   点击“系统管理”>>“固件升级”，选择相应的固件文件后点击“开始升级”。InGateway设备升级完成后，会提示重启设备以应用新的固件。
 ![](./images/2019-12-02-10-07-32.png)
  &nbsp;
 
-- 更新InGateway设备Python SDK版本  
+- 更新InGateway设备Python SDK版本  <br/>
 进入“边缘计算”>>“Python边缘计算”>>“引擎”页面，勾选“Python边缘计算引擎”并选择相应的SDK文件点击“升级”，InGateway设备会自动完成升级操作。
 ![](./images/2019-12-02-10-11-07.png)
 
@@ -175,12 +175,12 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 ![](./images/2019-12-02-14-48-31.png)
  &nbsp;
 
-- 步骤1：打开`sftp.json`文件  
+- 步骤1：打开`sftp.json`文件  <br/>
   在命令面板中输入`>SFTP:Config` 命令后打开`sftp.json`文件。
 ![](./images/2019-12-05-10-45-59.png)
  &nbsp;
 
-- 步骤2：配置SFTP连接  
+- 步骤2：配置SFTP连接  <br/>
   在`sftp.json`文件中根据InGateway设备“边缘计算”>>“Python边缘计算”>>“引擎”页面的连接参数配置SFTP连接。
   <font color=#FF0000>注意：Python APP名称应与mian. py中的APP名称保持一致。</font>
 
@@ -238,12 +238,12 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 
 ### 4. 构建APP发布包
 调试完毕后可以构建APP发布包以便于将APP快速部署至其他InGateway设备。
-- 步骤1：构建APP发布包  
+- 步骤1：构建APP发布包  <br/>
   在“终端”窗口执行`build_py_app.sh HelloWorld`命令构建APP发布包。（即build_py_app.sh 工程名称）
 ![](./images/2019-12-05-13-16-10.png)
  &nbsp;
 
-- 步骤2：下载APP发布包  
+- 步骤2：下载APP发布包  <br/>
   执行完成后在远程服务器的build目录下会自动生成APP发布包。右键本地的“build”文件夹并选择“Download Folder”将构建好的APP发布包下载到本地以便于后续部署。
 ![](./images/2019-12-05-13-17-42.png)
  &nbsp;
@@ -253,7 +253,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 
 ### 5. 通过InGateway Web页面部署App
 执行构建APP发布包命令后会自动在已连接的InGateway设备上安装对应的APP。同时您还可以访问其他InGateway设备的“边缘计算”>>“Python边缘计算”>>“应用”>>“配置”页面导入并上传APP发布包将APP部署到其他InGateway设备上。部署方法如下：
-- 步骤1：上传APP  
+- 步骤1：上传APP  <br/>
   在InGateway设备的“边缘计算”>>“Python边缘计算”>>“应用”>>“配置”页面点击“添加”按钮。
 ![](./images/2019-12-04-13-15-46.png)
  &nbsp;
@@ -262,7 +262,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 ![](./images/2019-12-04-13-14-57.png)
  &nbsp;
 
-- 步骤2：启用APP  
+- 步骤2：启用APP  <br/>
   上传完成后勾选“启用”HelloWorld App并点击提交，启用后APP将在InGateway设备中运行且每次开机自动运行。
 ![](./images/2019-12-04-13-17-45.png)
  &nbsp;
@@ -278,13 +278,13 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 ![](./images/2019-12-05-13-48-39.png)
 ![](./images/2019-12-05-14-54-03.png)
 ### 7. 为APP更新配置文件
-- 步骤1：修改配置文件  
+- 步骤1：修改配置文件  <br/>
   将App的“config.yaml”中的配置```description: "hello world!"```修改为:```description: "hello inhand!"```  
 
   ![](./images/2019-12-05-14-54-34.png) <br/>
  &nbsp;
 
-- 步骤2：导入配置文件并重启APP  
+- 步骤2：导入配置文件并重启APP  <br/>
   在InGateway设备的“边缘计算”>>“Python边缘计算”>>“应用”页面为“HelloWorld”APP导入修改后的配置文件并重启APP。  
 ![](./images/2019-12-05-14-55-24.png) 
 ![](./images/2019-12-05-14-55-43.png)
