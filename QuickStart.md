@@ -12,8 +12,7 @@
      ![](./images/2019-11-07-10-36-47.png) <br/>
  &nbsp;
 
-  - 方法二：使用固定IP地址
-  
+  - 方法二：使用固定IP地址  
     设置PC和InGateway设备FE 0/1口处于同一网段。选择“使用下面的IP地址”，输入IP地址（默认为192.168.1.2~192.168.1.254中任意值）；子网掩码（默认255.255.255.0）；默认网关（默认为192.168.1.1）以及DNS服务器地址，单击<确定>。  
 
     ![](./images/2019-11-29-16-00-56.png)   
@@ -100,12 +99,12 @@
 
 #### 3.3 配置工程模板
 ##### 3.3.1 使用映翰通标准工程模板
-- 步骤1：请从[这里](https://github.com/inhandnet/MobiuspiProjectTemplates/releases)下载MobiusPi工程模板。  
+- 步骤1：请从[这里](https://github.com/inhandnet/MobiuspiProjectTemplates/releases)下载MobiusPi工程模板。  </br>
 MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工程模板的详细说明请参考[README.md](https://github.com/inhandnet/MobiuspiProjectTemplates)。本教程使用标准工程模板“helloworld-template”进行演示说明。  
 ![](images/2019-12-25-09-39-17.png)
  &nbsp;
 
-- 步骤2：打开工程模板。  
+- 步骤2：打开工程模板。  </br>
 解压下载后的工程模板压缩包，使用VS Code打开解压文件夹中的helloworld-template文件夹，点击“文件”>>“打开文件夹”并选择的“helloworld-template”文件夹。
 ![](./images/2019-12-02-11-00-38.png)
  &nbsp;
