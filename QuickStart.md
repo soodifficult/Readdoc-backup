@@ -1,11 +1,11 @@
 # **第一章 MobiusPi Python开发快速入门**
-
-## 第一节 搭建开发环境
-### 1. 准备InGateway硬件设备及其网络环境
-#### 1.1 接通InGateway设备电源并使用网线连接PC
-接通InGateway设备的电源并按照拓扑使用以太网线连接PC和InGateway设备（本文档使用InGateway500为例，以下简称“IG500”）。
+MobiusPi是北京映翰通网络技术股份有限公司InGateway系列软硬件产品的代号。  <br/>InGateway系列产品包含两个大的产品系列，InGateway900和InGateway500系列。本文档以InGateway500系列产品为例为用户演示如何进行MobiusPi Python开发， 以下文档中将InGateway500简称为“IG500”。
+## 第一节 搭建MobiusPi开发环境
+### 1. 准备IG500硬件设备及其网络环境
+#### 1.1 接通IG500电源并使用网线连接PC
+接通IG500的电源并按照拓扑使用以太网线连接PC和IG500。
 ![](./images/2019-11-29-15-54-55.png)
-#### 1.2 设置LAN网络参数：在局域网访问Gateway设备
+#### 1.2 设置LAN网络参数：在局域网访问IG500
 - 步骤1：IG500的FE 0/1口的默认ip地址为192.168.1.1，设置PC的IP地址与FE 0/1口处于同一网段。  
   - 方法一：自动获取IP地址（推荐）  
 
@@ -26,14 +26,14 @@
 ![](./images/2019-12-02-10-00-22.png)   
  &nbsp;
 
-- 步骤4：如需修改登录IG500 web管理界面的用户名和密码可进入“系统管理”>>“用户管理”页面设置新的用户名和密码。
+- 步骤4：如需修改WEB管理界面的用户名和密码可进入“系统管理”>>“用户管理”页面设置新的用户名和密码。
 ![](./images/2019-12-02-10-03-42.png)   
 &nbsp;
 
 - 步骤5：如需修改FE 0/1口的IP地址可访问“网络”>>“以太网接口”>>“配置以太网0/1”页面进行修改。
 ![](./images/2019-12-02-10-04-14.png)   
 
-#### 1.3 设置InGateway连接Internet
+#### 1.3 设置IG500连接Internet
 - 步骤1：将SIM卡插入卡槽（注意：插拔SIM卡操作时，必须拔掉电源，以免造成数据丢失或设备损坏）。插入SIM卡后将4G LTE天线与ANT口连接，接通IG500的电源。
 
   ![](./images/2019-11-29-16-18-51.png) <br/>
@@ -46,14 +46,14 @@
   待网络连接状态显示为“连接”并且显示已分配相应IP地址等状态时说明IG500已通过SIM卡联网。  
 ![](./images/2019-12-04-10-00-36.png)
 
-#### 1.4 更新软件版本
-如需获取InGateway产品最新软件版本及其功能特性信息，请联系客服。如需更新IG500的固件或Python SDK版本，请参考如下方法。
+#### 1.4 更新IG500软件版本
+如需获取IG500产品最新软件版本及其功能特性信息，请联系客服。如需更新IG500的固件或Python SDK版本，请参考如下方法。
 - 更新IG500固件版本  <br/>
   点击“系统管理”>>“固件升级”，选择相应的固件文件后点击“开始升级”。IG500升级完成后，会提示重启设备以应用新的固件。
 ![](./images/2019-12-02-10-07-32.png)
  &nbsp;
 
-- 更新IG500Python SDK版本  <br/>
+- 更新IG500 Python SDK版本  <br/>
 进入“边缘计算”>>“Python边缘计算”>>“引擎”页面，勾选“Python边缘计算引擎”并选择相应的SDK文件点击“升级”，IG500会自动完成升级操作。
 ![](./images/2019-12-02-10-11-07.png)
 
@@ -62,7 +62,7 @@
 ![](./images/2019-12-02-10-13-05.png)
  &nbsp;
 
-启用调试模式后，InGateway启动一个SSH Server，监听LAN网络(默认IP地址192.168.1.1)的222端口。SSH Server的用户名和密码将被显示到上述网页中。为了提高安全性，每次开启调试模式或重启设备，都会重新随机生成新的密码。
+启用调试模式后，IG500启动一个SSH Server，监听LAN网络(默认IP地址192.168.1.1)的222端口。SSH Server的用户名和密码将被显示到上述网页中。为了提高安全性，每次开启调试模式或重启设备，都会重新随机生成新的密码。
 
 ### 2. 安装PC上需要的软件
 #### 2.1 安装Python解释器
@@ -87,7 +87,7 @@
 ![](./images/2019-12-02-10-28-49.png)  
  &nbsp;
 
-至此，IG500边缘计算平台（以下简称“MobiusPi”）开发所必需的插件安装完成。想要了解更多VS Code插件，请访问[Visual Studio Code官网](https://code.visualstudio.com/)。
+至此，MobiusPi边缘计算平台开发所必需的插件安装完成。想要了解更多VS Code插件，请访问[Visual Studio Code官网](https://code.visualstudio.com/)。
 
 #### 3.2 配置Python解释器版本
 使用快捷键：`Ctrl+Shift+P`弹出命令面板，在命令面板中输入`>Python: select Interpreter`。
@@ -184,7 +184,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
   在`sftp.json`文件中根据IG500“边缘计算”>>“Python边缘计算”>>“引擎”页面的连接参数配置SFTP连接。
   <font color=#FF0000>注意：Python APP名称应与mian. py中的APP名称保持一致。</font>
 
-  ![](./images/2019-12-05-10-31-24.png)
+  ![](images/2020-01-03-16-19-29.png)
  &nbsp;
 
 - 步骤3：配置完成并保存后在命令面板中输入`>SFTP:Open SSH in Terminal`以连接远端的服务器。
@@ -225,7 +225,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
   ```
   python -m ptvsd --host 192.168.1.1 --port 3000 HelloWorld/src/main.py 
   ```
-  - `192.168.1.1`为IG500FE 0/1口的IP地址
+  - `192.168.1.1`为IG500的FE 0/1口的IP地址
   - `3000`为建议的调试端口号
   - `HelloWorld/src/main.py`为mian. py的执行路径，请根据您的当前位置适当调整
 
@@ -313,7 +313,7 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 ![](images/2019-12-24-14-39-13.png)
  &nbsp;
 
-- 步骤4：使用`export`命令为APP设置环境变量。在终端窗口执行以下命令（“HelloWorld”项需要根据APP名称调整）
+- 步骤4：使用`export`命令为APP设置环境变量。在终端窗口执行以下命令（“HelloWorld”项需要根据实际的APP名称调整）
   ```
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/user/app/HelloWorld/lib/  
   export PYTHONPATH=$PYTHONPATH:/var/user/app/HelloWorld/lib/
