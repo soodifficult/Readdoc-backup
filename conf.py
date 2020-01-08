@@ -151,7 +151,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'MobiusPi', u'MobiusPi Documentation',
+    (master_doc, 'AAAAA', u'MobiusPi Documentation',
      author, 'MobiusPi', 'One line description of project.',
      'Miscellaneous'),
 ]
