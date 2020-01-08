@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'MobiusPi'
+project = u'AAA'
 copyright = u'2019, zhangning'
 author = u'zhangning'
 
@@ -66,7 +66,7 @@ language = u'zh_CN'
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = 'sphinx'
 
 html_style = 'css/docs.css'
 # -- Options for HTML output -------------------------------------------------
@@ -130,7 +130,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'AAA.tex', u'BBB Documentation',
+    (master_doc, 'MobiusPi.tex', u'MobiusPi Documentation',
      u'zhangning', 'manual'),
 ]
 
