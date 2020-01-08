@@ -130,7 +130,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'MobiusPi.tex', u'MobiusPi Documentation',
+    (master_doc, 'AAA.tex', u'BBB Documentation',
      u'zhangning', 'manual'),
 ]
 
@@ -140,7 +140,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'AAA', u'MobiusPi Documentation',
+    (master_doc, 'MobiusPi', u'MobiusPi Documentation',
      [author], 1)
 ]
 
