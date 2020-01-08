@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'InGateway'
+project = u'MobiusPi'
 copyright = u'2019, zhangning'
 author = u'zhangning'
 
@@ -103,7 +103,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'InGatewaydoc'
+htmlhelp_basename = 'Mobius Pi doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -130,7 +130,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'InGateway.tex', u'InGateway Documentation',
+    (master_doc, 'Mobius Pi.tex', u'Mobius Pi Documentation',
      u'zhangning', 'manual'),
 ]
 
@@ -140,7 +140,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ingateway', u'InGateway Documentation',
+    (master_doc, 'Mobius Pi', u'Mobius Pi Documentation',
      [author], 1)
 ]
 
@@ -151,8 +151,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'InGateway', u'InGateway Documentation',
-     author, 'InGateway', 'One line description of project.',
+    (master_doc, 'Mobius Pi', u'Mobius Pi Documentation',
+     author, 'Mobius Pi', 'One line description of project.',
      'Miscellaneous'),
 ]
 
