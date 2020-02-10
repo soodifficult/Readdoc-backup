@@ -11,4 +11,5 @@
    :caption: 开发者指南
 
    QuickStart.md
+   网关快速使用手册.md
 
