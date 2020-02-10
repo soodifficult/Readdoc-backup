@@ -12,4 +12,5 @@
 
    QuickStart.md
    网关快速使用手册.md
+   testdoc.md
 
