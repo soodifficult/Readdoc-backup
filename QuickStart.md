@@ -162,7 +162,6 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
   <font color=#FF0000>注意：Python App名称应与mian. py中的App名称保持一致。</font>
 
     ![](images/2020-02-18-09-03-28.png)  
-
  &nbsp;
   
 - 步骤3：配置完成并保存后在命令面板中输入`>SFTP:Open SSH in Terminal`以连接远端的服务器。
