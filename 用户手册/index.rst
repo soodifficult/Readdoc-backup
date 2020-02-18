@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-欢迎使用映翰通MobiusPi开发平台！
+用户手册
 =====================================
 
 .. toctree::
    :maxdepth: 2
    :caption: 开发者指南
 
-   开发手册/index
-   用户手册/index
+   网关快速使用手册.md
+   testdoc.md
 
