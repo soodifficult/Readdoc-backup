@@ -5,7 +5,8 @@ MobiusPi是北京映翰通网络技术股份有限公司InGateway系列软硬件
 #### 1.1 接通电源并使用网线连接PC
 - 准备IG500硬件设备  
   接通IG500的电源并按照拓扑使用以太网线连接PC和IG500。  <br/>
-![](./images/2019-11-29-15-54-55.png)
+![](./images/2019-11-29-15-54-55.png)  
+
 - 准备IG900硬件设备  
   接通IG900的电源并按照拓扑使用以太网线连接PC和IG900。  <br/>
 ![](images/2020-02-17-17-53-43.png)
@@ -148,18 +149,17 @@ MobiusPi提供多种工程模板以方便您快速初始化工程目录。各工
 - 步骤2：配置SFTP连接  <br/>
   - 配置IG500 SFTP连接  
   
-  在`sftp.json`文件中根据“边缘计算>>Python边缘计算”页面的连接参数配置SFTP连接。
+    在`sftp.json`文件中根据“边缘计算>>Python边缘计算”页面的连接参数配置SFTP连接。
   <font color=#FF0000>注意：Python App名称应与mian. py中的App名称保持一致。</font>
 
     ![](images/2020-02-18-08-59-54.png)
  &nbsp;
   - 配置IG900 SFTP连接  
   
-  在`sftp.json`文件中根据“边缘计算>>Python边缘计算”页面的连接参数配置SFTP连接。
+    在`sftp.json`文件中根据“边缘计算>>Python边缘计算”页面的连接参数配置SFTP连接。
   <font color=#FF0000>注意：Python App名称应与mian. py中的App名称保持一致。</font>
 
     ![](images/2020-02-18-09-03-28.png)  
-
  &nbsp;
   
 
