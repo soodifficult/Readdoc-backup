@@ -20,15 +20,16 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 ![](images/2020-02-21-16-56-55.png)  
 
   IG900正上方的端子接线说明如下图：  
-![](images/2020-01-09-18-47-30.png)  
+
+  ![](images/2020-01-09-18-47-30.png)  
 
 - IG500串口接线  
 
   接通IG500的电源并按照拓扑连接IG500和PLC。  <br/>
 ![](images/2020-02-21-17-29-54.png)  
 
-  IG500正下方的端子接线说明如下图：  
-![](images/2020-02-21-17-30-20.png)
+  IG500正下方的端子接线说明如下图：  <br/>
+  ![](images/2020-02-21-17-30-20.png)
 ### 1.2 设置LAN网络参数：在局域网访问PLC
 - IG900的GE 0/2口的默认IP地址为192.168.2.1。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
 - IG500的FE 0/1口的默认IP地址为192.168.1.1。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
@@ -77,7 +78,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
 - 步骤1：添加设备和资产  
   
   访问https://demo.thingsboard.io/login，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。
-![](images/2020-02-24-17-30-44.png)
+![](images/2020-02-24-17-30-44.png)  <br/>
 登录后，进入属性页面修改语言为简体中文
 ![](images/2020-02-26-09-50-27.png)
 
