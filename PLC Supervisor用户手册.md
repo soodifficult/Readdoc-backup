@@ -46,7 +46,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 ## 2.配置PLC Supervisor App
 ### 2.1 安装并运行PLC Supervisor
 - IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
-  ![](images/2020-02-21-17-57-15.png)
+  ![](images/2020-02-21-17-57-15.png)  
 
 - IG900如何安装并运行Python App请参考[IG900安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示： 
   ![](images/2020-02-21-17-57-15.png)
@@ -58,8 +58,10 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“Snap7”并配置PLC的通讯参数。（机架号和槽号除PLC为S7-200 Smart需要配置为0，1；其余类型的S7系列PLC默认使用0，0即可）<font color=#FF0000>注意：设备名称不能重复。</font>  
 
   ![](images/2020-02-27-14-18-01.png)  
-添加成功后如下图所示：  
-![](images/2020-02-27-14-32-51.png)
+
+  添加成功后如下图所示：  
+![](images/2020-02-27-14-32-51.png)  
+
 - 添加ModbusTCP通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusTCP”并配置PLC的通讯参数。（端口号和字节序默认为502和abcd；使用时需根据实际情况调整）<font color=#FF0000>注意：设备名称不能重复。</font>  
@@ -67,7 +69,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-03-06-15-02-16.png)  
 
   添加成功后如下图所示：  
-  ![](images/2020-03-06-15-02-42.png)
+  ![](images/2020-03-06-15-02-42.png)  
+
 - 添加ModbusRTU通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusRTU”并配置PLC的通讯参数。<font color=#FF0000>注意：设备名称不能重复。</font>  
@@ -113,19 +116,19 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   - 描述：变量描述  
   - 所属分组：变量所属的采集组  
   
-  下图是添加一个地址为%I0.0的开关变量的例子：  
+  下图是添加一个地址为%I0.0的开关变量的例子：  </br>
   ![](images/2020-02-27-18-06-40.png)  
 
-  下图是添加一个地址为%IB1的字节变量的例子：  
+  下图是添加一个地址为%IB1的字节变量的例子：  </br>
   ![](images/2020-02-27-18-08-22.png)  
 
-  下图是添加一个地址为%IW3的字变量的例子：  
+  下图是添加一个地址为%IW3的字变量的例子：  </br>
   ![](images/2020-02-28-16-26-04.png)  
 
-  下图是添加一个地址为%ID4的双字变量的例子：  
+  下图是添加一个地址为%ID4的双字变量的例子：  </br>
   ![](images/2020-02-28-16-27-49.png)  
 
-  下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  
+  下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  </br>
   ![](images/2020-02-28-16-25-21.png)  
 
 - 添加Modbus变量
@@ -155,16 +158,16 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   - 描述：变量描述  
   - 所属分组：变量所属的采集组  
   
-  下图是添加一个地址为00001的线圈变量的例子：  
+  下图是添加一个地址为00001的线圈变量的例子：  </br>
   ![](images/2020-03-06-15-33-59.png)  
 
-  下图是添加一个地址为10001的开关变量的例子：  
+  下图是添加一个地址为10001的开关变量的例子：  </br>
 ![](images/2020-03-06-15-35-15.png)  
 
-  下图是添加一个地址为30001的整数变量的例子：  
+  下图是添加一个地址为30001的整数变量的例子：  </br>
   ![](images/2020-03-06-15-36-37.png)  
 
-  下图是添加一个地址为40001的浮点数变量的例子：  
+  下图是添加一个地址为40001的浮点数变量的例子：  </br>
   ![](images/2020-03-06-15-37-11.png)
 #### 2.2.3 配置变量分组
 如需为变量配置不同的采集间隔和上报间隔或者需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算>>PLC Supervisor>>分组”页面添加新分组。  
@@ -198,7 +201,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - MQTT密码：任意6~32位密码
 - 其余项使用默认配置即可  
 
-配置完成后如下图所示：
+配置完成后如下图所示：  
 ![](images/2020-02-28-17-38-08.png)
 
 提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义函数]()
@@ -260,10 +263,12 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - slave：从站地址
   - byte_order：字节序  
   
+
   导出方式为PLC列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
 
   示例配置如下：  
+
   ![](images/2020-03-10-17-15-00.png)  
 
 - var.csv:变量配置文件，详细参数如下
@@ -281,20 +286,24 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - desc：描述
   - group：所属分组  
   
+
   导出方式为PLC列表页面的变量列表导出
   ![](images/2020-03-10-17-18-01.png)  
 
-  示例配置如下：
+  示例配置如下：  
+
   ![](images/2020-03-10-17-13-54.png)
 - group.csv:分组配置文件，详细参数如下
   - group_name
   - polling_interval
-  - upload_interval
+  - upload_interval  
   
+
   导出方式为分组页面的分组导出  
   ![](images/2020-03-10-17-19-04.png)  
 
   示例配置如下：  
+
   ![](images/2020-03-10-17-15-33.png)
 ### 自定义数据格式
 您可使用云服务中的高级设置功能配置MQTT主题、上报数据等参数并支持使用Python语言自定义MQTT发布和订阅主题的数据上报、处理等逻辑。无需二次开发即可实现与多种纯MQTT服务器进行数据上传和下发。
@@ -519,6 +528,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
 #### 添加设备和资产  
   
 访问https://demo.thingsboard.io/login，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。  
+
 ![](images/2020-02-26-16-27-53.png)  <br/>
 
 登录后，进入属性页面修改语言为简体中文
@@ -532,7 +542,6 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
   添加成功后如下图所示：  <br/>
 
   ![](images/2020-02-26-09-52-39.png)  
-
 &nbsp;
 
 - 添加一个设备
@@ -564,7 +573,6 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
     
   ![](images/2020-02-26-10-40-58.png)  
 &nbsp;
-
   添加完成后单击配置仪表板
 ![](images/2020-02-26-10-00-23.png)  
 
@@ -581,7 +589,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
 ![](images/2020-02-26-10-03-00.png)  
 
   保存后，为仪表板中添加部件。
-![](images/2020-02-26-10-03-23.png)
+![](images/2020-02-26-10-03-23.png)  
 
 - 添加趋势图  
   
@@ -594,7 +602,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
   ![](images/2020-02-26-10-15-50.png)  
 
   添加完成后如下图所示：
-![](images/2020-02-26-10-18-00.png)
+![](images/2020-02-26-10-18-00.png)  
 
 - 添加开关  
   
