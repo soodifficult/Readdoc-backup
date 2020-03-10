@@ -46,7 +46,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 ## 2.配置PLC Supervisor App
 ### 2.1 安装并运行PLC Supervisor
 - IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
-  ![](images/2020-02-21-17-57-15.png)  
+  ![](images/2020-02-21-17-57-15.png)  </br>
 
 - IG900如何安装并运行Python App请参考[IG900安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示： 
   ![](images/2020-02-21-17-57-15.png)
@@ -60,7 +60,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-02-27-14-18-01.png)  
 
   添加成功后如下图所示：  
-![](images/2020-02-27-14-32-51.png)  
+![](images/2020-02-27-14-32-51.png)  </br>
 
 - 添加ModbusTCP通讯的PLC设备  
   
@@ -69,7 +69,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-03-06-15-02-16.png)  
 
   添加成功后如下图所示：  
-  ![](images/2020-03-06-15-02-42.png)  
+  ![](images/2020-03-06-15-02-42.png)  </br>
 
 - 添加ModbusRTU通讯的PLC设备  
   
@@ -129,7 +129,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-02-28-16-27-49.png)  
 
   下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  </br>
-  ![](images/2020-02-28-16-25-21.png)  
+  ![](images/2020-02-28-16-25-21.png)  </br>
 
 - 添加Modbus变量
 点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
@@ -202,6 +202,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - 其余项使用默认配置即可  
 
 配置完成后如下图所示：  
+
 ![](images/2020-02-28-17-38-08.png)
 
 提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义函数]()
@@ -262,7 +263,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - port：以太网设备的通讯端口号
   - slave：从站地址
   - byte_order：字节序  
-  
+ &nbsp;
 
   导出方式为PLC列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
@@ -285,7 +286,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - size：字符串长度
   - desc：描述
   - group：所属分组  
-  
+ &nbsp;
 
   导出方式为PLC列表页面的变量列表导出
   ![](images/2020-03-10-17-18-01.png)  
@@ -297,7 +298,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - group_name
   - polling_interval
   - upload_interval  
-  
+ &nbsp;
 
   导出方式为分组页面的分组导出  
   ![](images/2020-03-10-17-19-04.png)  
@@ -572,7 +573,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
 ![](images/2020-02-26-10-40-22.png)  
     
   ![](images/2020-02-26-10-40-58.png)  
-&nbsp;
+
   添加完成后单击配置仪表板
 ![](images/2020-02-26-10-00-23.png)  
 
@@ -589,7 +590,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
 ![](images/2020-02-26-10-03-00.png)  
 
   保存后，为仪表板中添加部件。
-![](images/2020-02-26-10-03-23.png)  
+![](images/2020-02-26-10-03-23.png)  </br>
 
 - 添加趋势图  
   
@@ -602,7 +603,7 @@ Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsbo
   ![](images/2020-02-26-10-15-50.png)  
 
   添加完成后如下图所示：
-![](images/2020-02-26-10-18-00.png)  
+![](images/2020-02-26-10-18-00.png)  </br>
 
 - 添加开关  
   
