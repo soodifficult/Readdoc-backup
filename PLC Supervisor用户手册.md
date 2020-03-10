@@ -46,8 +46,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 ## 2.配置PLC Supervisor App
 ### 2.1 安装并运行PLC Supervisor
 - IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
-  ![](images/2020-02-21-17-57-15.png)  </br>
-
+  ![](images/2020-02-21-17-57-15.png)  
+ &nbsp;
 - IG900如何安装并运行Python App请参考[IG900安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示： 
   ![](images/2020-02-21-17-57-15.png)
 
@@ -60,8 +60,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-02-27-14-18-01.png)  
 
   添加成功后如下图所示：  
-![](images/2020-02-27-14-32-51.png)  </br>
-
+![](images/2020-02-27-14-32-51.png)  
+ &nbsp;
 - 添加ModbusTCP通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusTCP”并配置PLC的通讯参数。（端口号和字节序默认为502和abcd；使用时需根据实际情况调整）<font color=#FF0000>注意：设备名称不能重复。</font>  
@@ -69,8 +69,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-03-06-15-02-16.png)  
 
   添加成功后如下图所示：  
-  ![](images/2020-03-06-15-02-42.png)  </br>
-
+  ![](images/2020-03-06-15-02-42.png)  
+ &nbsp;
 - 添加ModbusRTU通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusRTU”并配置PLC的通讯参数。<font color=#FF0000>注意：设备名称不能重复。</font>  
@@ -115,7 +115,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   - 单位：变量单位  
   - 描述：变量描述  
   - 所属分组：变量所属的采集组  
-  
+   &nbsp;
+   
   下图是添加一个地址为%I0.0的开关变量的例子：  </br>
   ![](images/2020-02-27-18-06-40.png)  
 
@@ -129,8 +130,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-02-28-16-27-49.png)  
 
   下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  </br>
-  ![](images/2020-02-28-16-25-21.png)  </br>
-
+  ![](images/2020-02-28-16-25-21.png)  
+ &nbsp;
 - 添加Modbus变量
 点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
   - 变量名：变量名称  
@@ -157,7 +158,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   - 单位：变量单位  
   - 描述：变量描述  
   - 所属分组：变量所属的采集组  
-  
+   &nbsp;
+
   下图是添加一个地址为00001的线圈变量的例子：  </br>
   ![](images/2020-03-06-15-33-59.png)  
 
@@ -262,8 +264,8 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - ip/serial：以太网设备填写ip地址；串口设备填写RS485或RS232
   - port：以太网设备的通讯端口号
   - slave：从站地址
-  - byte_order：字节序  
- &nbsp;
+  - byte_order：字节序  </br>
+ &nbsp; 
 
   导出方式为PLC列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
@@ -285,7 +287,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - unit：单位
   - size：字符串长度
   - desc：描述
-  - group：所属分组  
+  - group：所属分组  </br>
  &nbsp;
 
   导出方式为PLC列表页面的变量列表导出
@@ -300,7 +302,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - upload_interval  
  &nbsp;
 
-  导出方式为分组页面的分组导出  
+  导出方式为分组页面的分组导出  </br>
   ![](images/2020-03-10-17-19-04.png)  
 
   示例配置如下：  
