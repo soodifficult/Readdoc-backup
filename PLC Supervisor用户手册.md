@@ -1,6 +1,17 @@
 # PLC Supervisor App用户手册
 PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数据采集、数据处理和数据上云功能，支持Snap7、ModbusRTU等多种工业协议解析。
-本手册以采集PLC的数据并上传至Thingboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
+本手册以采集PLC的数据并上传至Thingsboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
+
+## 简介
+使用过程中，您需要准备以下内容：  
+- 边缘计算网关IG500/IG900  
+- 更新软件版本所需的固件、SDK和App  
+- PLC设备  
+- 网线/串口线  
+- *Thingsboad演示账号  
+
+整体操作流程如下图：
+![](images/2020-03-11-17-41-49.png)
 ## 1.准备硬件设备及其数据采集环境
 ### 1.1 硬件接线
 #### 1.1.1 以太网接线
@@ -529,6 +540,8 @@ send_message_to_partner方法参数(系统方法)：
       mqtt_publish(topic, json.dumps(resp_data), 0) #调用mqtt_publish将响应数据发送给MQTT服务器
   ```
 
+### 其他网关操作
+关于网关的其他常用操作请查看[IG500快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)或[IG900快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)。
 ### 配置Thingsboard
 Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，也可以参考以下流程：  
 
