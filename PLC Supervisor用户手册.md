@@ -2,16 +2,16 @@
 PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数据采集、数据处理和数据上云功能，支持Snap7、ModbusRTU等多种工业协议解析。
 本手册以采集PLC的数据并上传至Thingsboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
 
-## 简介
-使用过程中，您需要准备以下内容：  
+## 概览
+使用过程中，您可能需要准备以下项：  
 - 边缘计算网关IG500/IG900  
 - 更新软件版本所需的固件、SDK和App  
 - PLC设备  
 - 网线/串口线  
 - *Thingsboad演示账号  
 
-整体操作流程如下图：
-![](images/2020-03-11-17-41-49.png)
+整体流程如下图所示：  
+![](images/2020-03-11-18-09-09.png)
 ## 1.准备硬件设备及其数据采集环境
 ### 1.1 硬件接线
 #### 1.1.1 以太网接线
@@ -46,27 +46,27 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - IG500的FE 0/1口的默认IP地址为192.168.1.1。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
 
 ### 1.3 设置WAN网络参数：传输数据至MQTT服务器
-- 设置IG500 WAN网络参数，请参考[IG500连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
 - 设置IG900 WAN网络参数，请参考[IG900连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
+- 设置IG500 WAN网络参数，请参考[IG500连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
 
 ### 1.4 更新InGateway设备软件版本
 如需获取InGateway产品最新软件版本及其功能特性信息，请联系客服。如需更新软件版本，请参考如下链接：
-- [更新IG500软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
 - [更新IG900软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
+- [更新IG500软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
 
 ## 2.配置PLC Supervisor App
 ### 2.1 安装并运行PLC Supervisor
-- IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
-  ![](images/2020-02-21-17-57-15.png)  
- &nbsp;
 - IG900如何安装并运行Python App请参考[IG900安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示： 
   ![](images/2020-02-21-17-57-15.png)
+ &nbsp;
+- IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
+  ![](images/2020-02-21-17-57-15.png)  
 
 ### 2.2 PLC Supervisor数据采集配置
 #### 2.2.1 添加PLC设备
 - 添加S7通讯的PLC设备  
   
-  点击“添加PLC”按钮，在添加设备页面选择PLC协议为“Snap7”并配置PLC的通讯参数。（机架号和槽号除PLC为S7-200 Smart需要配置为0，1；其余类型的S7系列PLC默认使用0，0即可）<font color=#FF0000>注意：设备名称不能重复。</font>  
+  点击“添加PLC”按钮，在添加设备页面选择PLC协议为“Snap7”并配置PLC的通讯参数。（除PLC为S7-200 Smart时机架号和槽号需要配置为0，1；其余类型的S7系列PLC默认使用0，0即可）<font color=#FF0000>注意：设备名称不能重复。</font>  
 
   ![](images/2020-02-27-14-18-01.png)  
 
@@ -147,7 +147,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  </br>
   ![](images/2020-02-28-16-25-21.png)  
  &nbsp;
-- 添加Modbus变量
+- 添加Modbus变量  
+  
 点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
   - 变量名：变量名称  
   - 地址：变量的寄存器地址  
@@ -187,10 +188,10 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   下图是添加一个地址为40001的浮点数变量的例子：  </br>
   ![](images/2020-03-06-15-37-11.png)
 #### 2.2.3 配置变量分组
-如需为变量配置不同的采集间隔和上报间隔或者需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算>>PLC Supervisor>>分组”页面添加新分组。  
+如需为变量配置不同的采集间隔和上报间隔或需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算>>PLC Supervisor>>分组”页面添加新分组。  
 ![](images/2020-02-27-17-03-51.png)
 
-添加分组后，添加变量时可以选择将变量关联到该分组或者在变量列表中选择需要关联的变量添加到指定分组中。
+添加分组后，添加变量时可以选择将变量关联到该分组或者在变量列表中选择需要关联的变量添加到指定分组中，分组中的变量会按照分组的采集间隔和上报间隔采集并上报数据。
 ![](images/2020-02-27-17-05-33.png)  
 
 ![](images/2020-02-27-17-06-20.png)
@@ -209,7 +210,10 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 修改成功如下图所示  
 ![](images/2020-03-06-17-01-19.png)
 ### 3.2 在Thingsboard上监控PLC数据
-#### 3.2.1 配置云服务
+#### 3.2.1 配置Thingsboard
+Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，您也可以按照[参考流程]()进行测试。
+
+#### 3.2.2 配置云服务
 进入“边缘计算>>PLC Supervisor>>云服务”页面，勾选启用云服务并配置相应的MQTT连接参数，配置完成后点击提交。
 - 服务器地址：demo.thingsboard.io
 - 端口号：1883
@@ -266,20 +270,19 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
         mqtt_publish(tail[0], json.dumps(resp_data), 0)
         print(tail[0])
     ```
-#### 3.2.2 配置Thingsboard
-Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，也可以按照[参考流程]()进行配置。
-
 
 ## 附录
 ### 导入导出配置
-PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
+PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，您可以通过导入导出配置文件快速实现采集配置。各配置文件内容如下：
 - device.csv：设备配置文件,详细参数如下
   - device_name：设备名称
-  - protocol：通讯协议名称
+  - protocol：通讯协议名称，如`ModbusTCP`
   - ip/serial：以太网设备填写ip地址；串口设备填写RS485或RS232
   - port：以太网设备的通讯端口号
-  - slave：从站地址
-  - byte_order：字节序  </br>
+  - rack（仅Snap7设备）：设备机架号
+  - slot（仅Snap7设备）：设备槽号
+  - slave（仅Modbus设备）：从站地址
+  - byte_order（仅Modbus设备）：字节序  </br>
  &nbsp; 
 
   导出方式为PLC列表页面的设备列表导出
@@ -293,11 +296,13 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
   - var_name：变量名称
   - device：变量所属设备
   - protocol：通讯协议名称
+  - dbnumber（仅Snap7设备）：DB号
+  - register_type（仅Snap7设备）：寄存器类型，如`DB`
   - register_addr：寄存器地址
   - register_bit：位偏移
   - data_type：数据类型
   - read_write：读写权限，包括`Read/Write`、`Write`、`Read`
-  - float_repr：小数位，1-6
+  - float_repr：小数位，1~6
   - mode：采集模式，包括`realtime`、`onchange`
   - unit：单位
   - size：字符串长度
@@ -312,9 +317,9 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件：
 
   ![](images/2020-03-10-17-13-54.png)
 - group.csv:分组配置文件，详细参数如下
-  - group_name
-  - polling_interval
-  - upload_interval  
+  - group_name：分组名称
+  - polling_interval：采集间隔
+  - upload_interval：上传间隔  
  &nbsp;
 
   导出方式为分组页面的分组导出  </br>
@@ -542,9 +547,7 @@ send_message_to_partner方法参数(系统方法)：
 
 ### 其他网关操作
 关于网关的其他常用操作请查看[IG500快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)或[IG900快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)。
-### 配置Thingsboard
-Thingsboard的配置方法可以参考[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，也可以参考以下流程：  
-
+### Thingsboard参考配置
 #### 添加设备和资产  
   
 访问https://demo.thingsboard.io/login，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。  
