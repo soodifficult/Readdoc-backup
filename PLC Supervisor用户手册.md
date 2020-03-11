@@ -62,6 +62,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   添加成功后如下图所示：  
 ![](images/2020-02-27-14-32-51.png)  
  &nbsp;
+
 - 添加ModbusTCP通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusTCP”并配置PLC的通讯参数。（端口号和字节序默认为502和abcd；使用时需根据实际情况调整）<font color=#FF0000>注意：设备名称不能重复。</font>  
@@ -71,6 +72,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   添加成功后如下图所示：  
   ![](images/2020-03-06-15-02-42.png)  
  &nbsp;
+ 
 - 添加ModbusRTU通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusRTU”并配置PLC的通讯参数。<font color=#FF0000>注意：设备名称不能重复。</font>  
