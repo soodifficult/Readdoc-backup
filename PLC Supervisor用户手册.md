@@ -8,7 +8,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   
   接通IG900的电源并按照拓扑使用以太网线连接IG900和PLC。  <br/>
 ![](images/2020-02-21-14-52-40.png)  
-
+ &nbsp;
 
 - IG500以太网接线  
   
@@ -26,13 +26,13 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - IG500串口接线  
 
   接通IG500的电源并按照拓扑连接IG500和PLC。  <br/>
-![](images/2020-02-21-17-29-54.png)  
+![](images/2020-03-11-16-59-42.png)  
 
   IG500正下方的端子接线说明如下图：  <br/>
-  ![](images/2020-02-21-17-30-20.png)
+  ![](images/2020-03-11-11-38-45.png)
 ### 1.2 设置LAN网络参数：在局域网访问PLC
-- IG900的GE 0/2口的默认IP地址为192.168.2.1。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
-- IG500的FE 0/1口的默认IP地址为192.168.1.1。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+- IG900的GE 0/2口的默认IP地址为192.168.2.1。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+- IG500的FE 0/1口的默认IP地址为192.168.1.1。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
 
 ### 1.3 设置WAN网络参数：传输数据至MQTT服务器
 - 设置IG500 WAN网络参数，请参考[IG500连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
@@ -71,7 +71,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
   添加成功后如下图所示：  
   ![](images/2020-03-06-15-02-42.png)  </br>
- &nbsp;
+ &nbsp;  
+ 
   
 - 添加ModbusRTU通讯的PLC设备  
   
@@ -457,17 +458,20 @@ send_message_to_partner方法参数(系统方法)：
   }
   ```
 - operate：目前仅支持"write_plc_values"，用于写入数据到PLC变量
-- *ack_callback：调用ack方法，一般用于将数据下发结果返回给平台。默认值None
-- *ack_tail：ack方法的特殊参数，一般用于将下发数据中需要返回给平台的特殊数据传给ack方法。
-- *timeout：超时时间，默认为60秒
+- ack（非必填项）：调用ack方法，一般用于将数据下发结果返回给平台。默认值None
+- ack_tail（非必填项）：ack方法的特殊参数，一般用于将下发数据中需要返回给平台的特殊数据传给ack方法。
+- timeout（非必填项）：超时时间，默认为60秒
 
-自定义ack_callback方法参数：
-- message: send_message_to_partner方法中的message数据
+自定义ack方法参数：
+- send_result: send_message_to_partner方法的写入结果
+  - 写入超时时send_result为None
+  - 写入成功时send_result格式参考：[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'OK'}]；
+  - 写入失败时send_result格式参考：[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'Failed'}]；
 - tail：send_message_to_partner方法中的ack_tail数据
 - mqtt_publish：MQTT发布消息方法（可能受网络影响导致发布失败）
 
 以下是三个常见的自定义订阅方法用例：
-- 用例1：下发变量名称和变量值写入PLC数据且不返回写入结果
+- 用例1：下发变量名称和变量值写入PLC数据且不返回写入结果(禁止mqtt_publish和save_data方法与return同时使用)
   ```python
   import logging
   import json
@@ -511,19 +515,16 @@ send_message_to_partner方法参数(系统方法)：
       var_device = payload["Device"] #定义设备名称
       if payload["method"] == "setValue": #检测是否为写入数据
           message = {var_device:data_dict} #定义下发消息，包括设备名称和下发的数据字典
-          ack_data = [topic.replace('request', 'response'), message] #定义确认数据，包括响应的主题和消息
+          ack_tail = [topic.replace('request', 'response'), message] #定义确认数据，包括响应的主题和消息
           logging.info(message)
-          send_message_to_partner(message, "write_plc_values", ack, ack_data, timeout = 10) #调用send_message_to_partner方法，将message字典中的数据下发至指定变量；调用ack方法并发送ack_data给ack方法
+          send_message_to_partner(message, "write_plc_values", ack, ack_tail, timeout = 10) #调用send_message_to_partner方法，将message字典中的数据下发至指定变量；调用ack方法并发送ack_tail给ack方法
   
-  def ack(data, tail, mqtt_publish): #定义ack方法
-      '''
-      data为写入结果数据，如果data为None，则说明写入超时；写入成功时data格式如[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'OK'}]；写入失败时result为"Failed"。
-      '''
-      topic = tail[0] #定义响应主题
-      if not data: #检测下发是否超时
-          resp_data = {"Status":"timeout", "Data":tail[1]} #定义下发超时的响应数据
+  def ack(send_result, ack_tail, mqtt_publish): #定义ack方法
+      topic = ack_tail[0] #定义响应主题
+      if not send_result: #检测下发是否超时
+          resp_data = {"Status":"timeout", "Data":ack_tail[1]} #定义下发超时的响应数据
       else:
-          resp_data = {"Status":data[0]["result"], "Data":tail[1]} #定义下发未超时的响应数据
+          resp_data = {"Status":send_result[0]["result"], "Data":ack_tail[1]} #定义下发未超时的响应数据
       mqtt_publish(topic, json.dumps(resp_data), 0) #调用mqtt_publish将响应数据发送给MQTT服务器
   ```
 
