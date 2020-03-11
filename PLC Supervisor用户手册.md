@@ -70,10 +70,9 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   ![](images/2020-03-06-15-02-16.png)  
 
   添加成功后如下图所示：  
-  ![](images/2020-03-06-15-02-42.png)  
-
-</br>
- 
+  ![](images/2020-03-06-15-02-42.png)  </br>
+ &nbsp;
+  
 - 添加ModbusRTU通讯的PLC设备  
   
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ModbusRTU”并配置PLC的通讯参数。<font color=#FF0000>注意：设备名称不能重复。</font>  
