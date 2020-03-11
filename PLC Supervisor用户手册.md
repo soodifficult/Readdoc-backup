@@ -61,7 +61,6 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
   添加成功后如下图所示：  
 ![](images/2020-02-27-14-32-51.png)  
-
  &nbsp;
 
 - 添加ModbusTCP通讯的PLC设备  
