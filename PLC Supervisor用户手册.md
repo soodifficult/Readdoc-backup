@@ -18,18 +18,18 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - IG900以太网接线  
   
   接通IG900的电源并按照拓扑使用以太网线连接IG900和PLC。  <br/>
-![](images/2020-02-21-14-52-40.png)  
+![](images/2020-03-12-14-02-22.png)  
  &nbsp;
 
 - IG500以太网接线  
   
   接通IG500的电源并按照拓扑使用以太网线连接IG500和PLC。  <br/>
-![](images/2020-02-21-14-53-05.png)
+![](images/2020-03-12-14-03-03.png)
 #### 1.1.2 串口接线
 - IG900串口接线  
 
   接通IG900的电源并按照拓扑连接IG900和PLC。  <br/>
-![](images/2020-02-21-16-56-55.png)  
+![](images/2020-03-12-14-03-36.png)  
 
   IG900正上方的端子接线说明如下图：  <br/>
   ![](images/2020-01-09-18-47-30.png)  
@@ -37,13 +37,13 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - IG500串口接线  
 
   接通IG500的电源并按照拓扑连接IG500和PLC。  <br/>
-![](images/2020-03-11-16-59-42.png)  
+![](images/2020-03-12-14-04-05.png)  
 
   IG500正下方的端子接线说明如下图：  <br/>
   ![](images/2020-03-11-11-38-45.png)
 ### 1.2 设置LAN网络参数：在局域网访问PLC
-- IG900的GE 0/2口的默认IP地址为192.168.2.1。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
-- IG500的FE 0/1口的默认IP地址为192.168.1.1。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
+- IG900的GE 0/2口的默认IP地址为`192.168.2.1`。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+- IG500的FE 0/1口的默认IP地址为`192.168.1.1`。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
 
 ### 1.3 设置WAN网络参数：传输数据至MQTT服务器
 - 设置IG900 WAN网络参数，请参考[IG900连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
@@ -149,8 +149,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
  &nbsp;
 - 添加Modbus变量  
   
-点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
-  - 变量名：变量名称  
+  点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
+  - 变量名：变量名称<font color=#FF0000>（同一设备下变量名称不能重复）</font>    
   - 地址：变量的寄存器地址  
   - 数据类型：变量数据类型，包括：  
     - BOOL：True或False  
@@ -163,7 +163,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
     - STRING：8位字符串   
   - 小数位：数据类型为FLOAT时变量小数点后的数据长度，最大6位  
   - 长度：数据类型为STRING时字符串长度  
-  - 位：地址为30001~40000.310001~365535，40001~50000，410001~465535且数据类型为BOOL或BIT时变量的位偏移，可输入0~15中任一数字  
+  - 位：地址为`30001~40000`,`310001~365535`，`40001~50000`，`410001~465535`且数据类型为BOOL或BIT时变量的位偏移，可输入0~15中任一数字  
   - 读写权限：  
     - Read：只读，不可写  
     - Write：只写，不可读  
@@ -215,7 +215,7 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 
 #### 3.2.2 配置云服务
 进入“边缘计算>>PLC Supervisor>>云服务”页面，勾选启用云服务并配置相应的MQTT连接参数，配置完成后点击提交。
-- 服务器地址：demo.thingsboard.io
+- 服务器地址：`demo.thingsboard.io`
 - 端口号：1883
 - MQTT客户端ID：任一唯一ID
 - MQTT用户名：Thingsboard设备的访问令牌，访问令牌获取方式见[Thingsboard设备令牌]()
@@ -228,47 +228,46 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 
 提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义函数]()
 - 发布主题：
-  - 主题：v1/devices/me/telemetry
+  - 主题：`v1/devices/me/telemetry`
   - Qos(MQTT)：1
   - 分组：需要上传至thingsboard的数据
-  - 主函数：入口函数名称，本文档为test_upload
+  - 主函数：入口函数名称，本文档为`test_upload`
   - 函数实现：
     ```python
-    from common.Logger import logger
-
-    def test_upload(recv, global_argv, mqtt_publish, save_db):
-      value_dict = {}
-      for id, val in recv['values'].items():
-          value_dict[id] = val["raw_data"]
-      value_dict["timestamp"] = recv["timestamp"]
-      logger.info("*" * 100)
-      logger.info(value_dict)
-      return value_dict
+    from common.Logger import logger #导入打印日志模块logger
+    
+    def test_upload(data, global_argv, mqtt_publish, save_db): #定义主函数test_upload
+        value_dict = {} #定义上报的数据字典value_dict
+        for device, val_dict in data['values'].items(): #遍历data中的values字典，该字典中包含设备名称和设备下的变量数据
+            for id, val in val_dict.items(): #遍历变量数据，为value_dict字典赋值
+                value_dict[id] = val["raw_data"]
+            value_dict["timestamp"] = data["timestamp"]
+        logger.info(value_dict) #在日志中以info等级打印value_dict
+        return value_dict ##将value_list发送给App，由App自行顺序上传至MQTT服务器。最终的value_list格式为{'bool': False, 'byte': 7, 'real': 0.0, 'timestamp': 1583990892.5429199}
     ```
 
 - 订阅主题
-  - 主题：v1/devices/me/rpc/request/+
+  - 主题：`v1/devices/me/rpc/request/+`
   - Qos(MQTT)：1
-  - 主函数：入口函数名称，本文档为test_ctl
+  - 主函数：入口函数名称，本文档为`test_ctl`
   - 函数实现：
     ```python
-    from common.Logger import logger
-    import json
+    from common.Logger import logger #导入打印日志模块logger
+    import json #导入json模块
     
-    def test_ctl(topic, payload, send_message_to_partner=None):
-        logger.info("#" * 100)
-        logger.info(topic)
-        logger.info(payload)
-        payload = json.loads(payload)
-        if payload["method"] == "setValue":
-            message = {"Bool_data":float(payload["params"])}
-            response_data = [topic.replace('request', 'response'), message]
-            send_message_to_partner(message, "write_plc_values", ack, response_data)
+    def test_ctl(topic, payload, send_message_to_partner=None): #定义主函数test_ctl
+        logger.info(topic) #打印订阅主题
+        logger.info(payload) #打印订阅数据，Thingsboard的下发数据格式为{"method":"setValue","params":true}
+        payload = json.loads(payload) #反序列化订阅数据
+        if payload["method"] == "setValue": #检测是否为写入数据
+            message = {"bool":payload["params"]} #定义下发消息，包括下发的变量名称和变量值
+            response_data = [topic.replace('request', 'response'), message] #定义确认数据，包括响应的主题和消息
+            send_message_to_partner(message, "write_plc_values", ack, response_data) #调用send_message_to_partner方法，将message字典中的数据下发至指定变量；调用ack方法并发送response_data给ack方法
+
     
-    def ack(data, tail, mqtt_publish):
-        resp_data = tail[1]
-        mqtt_publish(tail[0], json.dumps(resp_data), 0)
-        print(tail[0])
+    def ack(data, tail, mqtt_publish): #定义ack方法
+        resp_data = tail[1] #定义响应数据
+        mqtt_publish(tail[0], json.dumps(resp_data), 0) #调用mqtt_publish将响应数据发送给MQTT服务器
     ```
 
 ## 附录
@@ -377,7 +376,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
     - userdate：默认为None
 
 以下是两个常见的自定义发布方法用例：
-- 用例1（使用return方式上传数据）：
+- 用例1（使用return方式上传数据，<font color=#FF0000>禁止mqtt_publish和save_data方法与return同时使用</font>）：
   ```python
   import logging
   """
@@ -415,7 +414,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
       }
   ]
   ```
-- 用例2（使用mqtt_publish上传数据并使用save_data存储上传失败的数据。上传失败的数据会在连接正常时按时间顺序依次上传）：
+- 用例2（使用`mqtt_publish`上传数据并使用`save_data`存储上传失败的数据。上传失败的数据会在连接正常时按时间顺序依次上传）：
   ```python
   import logging
   import json
@@ -466,7 +465,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - payload：订阅的数据，数据类型为string（一般为json字符串）
   - send_message_to_partner：将接收到的数据发给指定服务的方法  
 
-send_message_to_partner方法参数(系统方法)：
+`send_message_to_partner`方法参数(系统方法)：
 - message：需要发送给指定服务的数据，数据类型为dict。当参数operate为"write_plc_values"时消息格式如下
   ```python
   {
@@ -482,13 +481,13 @@ send_message_to_partner方法参数(系统方法)：
 自定义ack方法参数：
 - send_result: send_message_to_partner方法的写入结果
   - 写入超时时send_result为None
-  - 写入成功时send_result格式参考：[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'OK'}]；
-  - 写入失败时send_result格式参考：[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'Failed'}]；
+  - 写入成功时send_result格式参考：`[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'OK'}]`；
+  - 写入失败时send_result格式参考：`[{'value': 12.300000000000001, 'device': 'Modbus_test', 'var_name': 'SP1', 'result': 'Failed'}]`；
 - tail：send_message_to_partner方法中的ack_tail数据
 - mqtt_publish：MQTT发布消息方法（可能受网络影响导致发布失败）
 
 以下是三个常见的自定义订阅方法用例：
-- 用例1：下发变量名称和变量值写入PLC数据且不返回写入结果(禁止mqtt_publish和save_data方法与return同时使用)
+- 用例1：下发变量名称和变量值写入PLC数据且不返回写入结果
   ```python
   import logging
   import json
@@ -550,7 +549,7 @@ send_message_to_partner方法参数(系统方法)：
 ### Thingsboard参考配置
 #### 添加设备和资产  
   
-访问https://demo.thingsboard.io/login，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。  
+访问`https://demo.thingsboard.io/login`，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。  
 
 ![](images/2020-02-26-16-27-53.png)  <br/>
 
