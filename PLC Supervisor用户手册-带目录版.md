@@ -23,7 +23,8 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - [硬件接线](#hardware-wiring)
 - [设置LAN网络参数](#configuration-lan)
 - [设置WAN网络参数](#configuration-wan)
-- [更新软件版本](#update)
+- [更新软件版本](#update)  
+
 <h3 id="hardware-wiring">1.1 硬件接线</h3>  
 
 #### 1.1.1 以太网接线
