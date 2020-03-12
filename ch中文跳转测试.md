@@ -9,8 +9,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
 [采集接线1](#ig500tt1)
 [采集接线2](#ig500tt2)
-<span id="ig500tt1">ig500tt1</span>
-<span id="ig500tt2">ig500tt2</span>
+
 
 
 d1  
