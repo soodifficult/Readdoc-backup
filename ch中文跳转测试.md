@@ -3,12 +3,14 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 本手册以采集PLC的数据并上传至Thingboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
 [以太网数据采集接线](#以太网数据采集接线)
 
-[test](#ig500tt)
+[test1](#ig500tt1)
+[test2](#ig500tt2)
 
-<a href="#ig500tt">ig500tt1</a>
 
-[采集接线](#ig500tt)
-<span id="ig500tt">ig500tt2</span>
+[采集接线1](#ig500tt1)
+[采集接线2](#ig500tt2)
+<span id="ig500tt1">ig500tt1</span>
+<span id="ig500tt2">ig500tt2</span>
 
 
 d1  
@@ -64,7 +66,7 @@ d1
 d1  
 
 d1  
-
+<a href="#ig500tt1">ig500tt1</a>
 
 ## 1.准备硬件设备及其数据采集环境
 ### 1.1 硬件接线
@@ -86,4 +88,4 @@ d1
   IG900正上方的端子接线说明如下图：  
 ![](images/2020-01-09-18-47-30.png)  
 
-<h2 id="ig500tt">网站与域名1</h2>
+<h2 id="ig500tt2">网站与域名1</h2>
