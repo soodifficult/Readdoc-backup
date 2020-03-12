@@ -10,7 +10,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   - [1.准备硬件设备及其数据采集环境](#1准备硬件设备及其数据采集环境)
     - [1.1 硬件接线](#11-硬件接线)
       - [以太网数据采集接线](#以太网数据采集接线)
-      - [1.1.2 串口接线](#112-串口接线)
+      - [<a id='jump'>采集接线</a>](#采集接线)
 - [IG500tt](#ig500tt)
 
 <!-- /code_chunk_output -->
@@ -21,6 +21,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
 <a href="#ig500tt">ig500tt</a>
 
+[采集接线](#jump)
 <span id="ig500tt">ig500tt</span>
 ## 1.准备硬件设备及其数据采集环境
 ### 1.1 硬件接线
@@ -34,7 +35,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   
   接通IG500的电源并按照拓扑使用以太网线连接IG500和PLC。  <br/>
 ![](images/2020-02-21-14-53-05.png)
-#### 1.1.2 串口接线
+#### <a id='jump'>采集接线</a>
 - IG900串口接线  
 
   接通IG900的电源并按照拓扑连接IG900和PLC。  <br/>
