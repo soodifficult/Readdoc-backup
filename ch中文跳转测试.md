@@ -7,7 +7,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
 <a href="#ig500tt">ig500tt1</a>
 
-[采集接线](#jump)
+[采集接线](#ig500tt)
 <span id="ig500tt">ig500tt2</span>
 
 
@@ -75,12 +75,9 @@ d1
 ![](images/2020-02-21-14-52-40.png)  
 
 - IG500以太网接线  
-
-<h2 id="ig500tt">网站与域名1</h2>
   
   接通IG500的电源并按照拓扑使用以太网线连接IG500和PLC。  <br/>
 ![](images/2020-02-21-14-53-05.png)
-#### <a id='jump'>采集接线</a>
 - IG900串口接线  
 
   接通IG900的电源并按照拓扑连接IG900和PLC。  <br/>
@@ -89,4 +86,4 @@ d1
   IG900正上方的端子接线说明如下图：  
 ![](images/2020-01-09-18-47-30.png)  
 
-### IG500tt  
+<h2 id="ig500tt">网站与域名1</h2>
