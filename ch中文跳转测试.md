@@ -1,4 +1,4 @@
-# PLC Supervisor App用户手册
+# 标题测试
 PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数据采集、数据处理和数据上云功能，支持Snap7、ModbusRTU等多种工业协议解析。
 本手册以采集PLC的数据并上传至Thingboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
 
@@ -6,19 +6,20 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
 <!-- code_chunk_output -->
 
-- [PLC Supervisor App用户手册](#plc-supervisor-app用户手册)
+- [标题测试](#标题测试)
   - [1.准备硬件设备及其数据采集环境](#1准备硬件设备及其数据采集环境)
     - [1.1 硬件接线](#11-硬件接线)
-      - [1.1.1 以太网数据采集接线](#111-以太网数据采集接线)
+      - [以太网数据采集接线](#以太网数据采集接线)
       - [1.1.2 串口接线](#112-串口接线)
 
 <!-- /code_chunk_output -->
 
-[1.1.2 串口接线](#112-串口接线)
+[以太网数据采集接线](#以太网数据采集接线)
 
+[以太网数据采集接线](#Ethefnet)
 ## 1.准备硬件设备及其数据采集环境
 ### 1.1 硬件接线
-#### 1.1.1 以太网数据采集接线
+#### 以太网数据采集接线
 - IG900以太网接线  
   
   接通IG900的电源并按照拓扑使用以太网线连接IG900和PLC。  <br/>
