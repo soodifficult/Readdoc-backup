@@ -313,7 +313,7 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 - [导入导出配置](#import-and-export)
 - [自定义数据格式](#custom-data-format)
 - [其他网关操作](#other-operations)
-- [Thingsboard参考配置](#thingsboard-reference-configuration)  
+- [Thingsboard参考流程](#thingsboard-reference-configuration)  
 
 <h3 id="import-and-export">导入导出配置</h3>  
 
@@ -335,6 +335,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   示例配置如下：  
 
   ![](images/2020-03-10-17-15-00.png)  
+  
   &nbsp;
   </br>
   
@@ -362,6 +363,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   示例配置如下：  
 
   ![](images/2020-03-10-17-13-54.png)  
+
   &nbsp;
   </br>
   
