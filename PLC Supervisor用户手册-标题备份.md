@@ -1,33 +1,18 @@
-# PLC Supervisor App用户手册
+# PLC Supervisor App用户手册-标题备份
 PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数据采集、数据处理和数据上云功能，支持Snap7、ModbusRTU等多种工业协议解析。
 本手册以采集PLC的数据并上传至Thingsboard云平台为例说明如何通过PLC Supervisor App实现PLC数据采集和数据上云。以下将InGateway500简称为“IG500”；InGateway900简称为“IG900”。
 
 ## 概览
-使用过程中，您需要准备以下项：  
+使用过程中，您可能需要准备以下项：  
 - 边缘计算网关IG500/IG900  
+- 更新软件版本所需的固件、SDK和App  
 - PLC设备  
 - 网线/串口线  
-- *更新软件版本所需的固件、SDK和App  
 - *Thingsboad演示账号  
 
 整体流程如下图所示：  
-- [环境准备](#准备硬件设备及其数据采集环境)
-- [数据采集配置（配置PLC Supervisor App）](#配置Plc_Supervisor_App)
-- [监控PLC数据](#监控PLC数据)  
-- [附录](#附录)
-
 ![](images/2020-03-12-22-26-27.png)
-
-<a id="准备硬件设备及其数据采集环境"> </a>  
-
 ## 1.准备硬件设备及其数据采集环境
-- [硬件接线](#硬件接线)
-- [设置LAN网络参数](#设置LAN网络参数)
-- [设置WAN网络参数](#设置WAN网络参数)
-- [更新软件版本](#更新InGateway设备软件版本)  
-
-<a id="硬件接线"> </a>  
-
 ### 1.1 硬件接线
 #### 1.1.1 以太网接线
 - IG900以太网接线  
@@ -56,37 +41,20 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
   IG500正下方的端子接线说明如下图：  <br/>
   ![](images/2020-03-11-11-38-45.png)
- 
-<a id="设置LAN网络参数"> </a>  
-
 ### 1.2 设置LAN网络参数：在局域网访问PLC
 - IG900的GE 0/2口的默认IP地址为`192.168.2.1`。为了使IG900能够通过GE 0/2口访问以太网PLC，需要设置GE 0/2口与PLC处于同一网段，设置方法请参考[在局域网访问IG900](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
 - IG500的FE 0/1口的默认IP地址为`192.168.1.1`。为了使IG500能够通过FE 0/1口访问以太网PLC，需要设置FE 0/1口与PLC处于同一网段，设置方法请参考[在局域网访问IG500](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。
 
-<a id="设置WAN网络参数"> </a>  
-
 ### 1.3 设置WAN网络参数：传输数据至MQTT服务器
 - 设置IG900 WAN网络参数，请参考[IG900连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
 - 设置IG500 WAN网络参数，请参考[IG500连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
-
-<a id="更新InGateway设备软件版本"> </a>  
 
 ### 1.4 更新InGateway设备软件版本
 如需获取InGateway产品最新软件版本及其功能特性信息，请联系客服。如需更新软件版本，请参考如下链接：
 - [更新IG900软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
 - [更新IG500软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
 
-<a id="配置Plc_Supervisor_App"> </a>  
-
 ## 2.配置PLC Supervisor App
-- [安装并运行PLC Supervisor](#安装并运行PLC_Supervisor)
-- [PLC Supervisor数据采集配置](#PLC_Supervisor数据采集配置)
-  - [添加PLC设备](#添加PLC设备)
-  - [添加变量](#添加变量)
-  - [配置变量分组](#配置变量分组)
-
-<a id="安装并运行PLC_Supervisor"> </a>  
-
 ### 2.1 安装并运行PLC Supervisor
 - IG900如何安装并运行Python App请参考[IG900安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示： 
   ![](images/2020-02-21-17-57-15.png)
@@ -94,11 +62,7 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 - IG500如何安装并运行Python App请参考[IG500安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，PLC Supervisor正常运行后如下图所示：  
   ![](images/2020-02-21-17-57-15.png)  
 
-<a id="PLC_Supervisor数据采集配置"> </a>  
-
 ### 2.2 PLC Supervisor数据采集配置
-<a id="添加PLC设备"> </a>  
-
 #### 2.2.1 添加PLC设备
 - 添加S7通讯的PLC设备  
   
@@ -133,9 +97,6 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
   如需修改RS232/RS485串口的通讯参数，请在“边缘计算>>PLC Supervisor>>全局参数”页面修改。修改后所有串口设备的通讯参数将自动修改并按照修改后的通讯参数通讯。  
 ![](images/2020-02-27-14-26-04.png)
-
-<a id="添加变量"> </a>  
-
 #### 2.2.2 添加变量
 - 添加Snap7变量  
   
@@ -186,8 +147,6 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
   下图是添加一个地址为%DB6.DBD18的浮点数变量的例子：  </br>
   ![](images/2020-02-28-16-25-21.png)  
  &nbsp;
- </br>
-
 - 添加Modbus变量  
   
   点击“添加变量”按钮，在添加变量弹出框中配置PLC变量参数：
@@ -228,9 +187,6 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
   下图是添加一个地址为40001的浮点数变量的例子：  </br>
   ![](images/2020-03-06-15-37-11.png)
-
-<a id="配置变量分组"> </a>  
-
 #### 2.2.3 配置变量分组
 如需为变量配置不同的采集间隔和上报间隔或需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算>>PLC Supervisor>>分组”页面添加新分组。  
 ![](images/2020-02-27-17-03-51.png)
@@ -239,15 +195,9 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 ![](images/2020-02-27-17-05-33.png)  
 
 ![](images/2020-02-27-17-06-20.png)
-
-<a id="监控PLC数据"> </a>  
+#### 2.2.3 监控PLC数据
 
 ## 3.监控PLC数据
-- [本地监控PLC数据](#本地监控PLC数据)
-- [在Thingsboard上监控PLC数据](#在Thingsboard上监控PLC数据)  
-  
-<a id="本地监控PLC数据"> </a>  
-
 ### 3.1 本地监控PLC数据
 数据采集配置完成后，可以在“边缘计算>>PLC Supervisor>>PLC列表”页面查看数据采集情况。点击PLC列表中的设备卡片可切换需要查看的PLC数据
 ![](images/2020-02-27-17-14-47.png)  
@@ -259,26 +209,24 @@ PLC Supervisor App（以下简称PLC Supervisor）为用户提供了便捷的数
 
 修改成功如下图所示  
 ![](images/2020-03-06-17-01-19.png)
-
-<a id="在Thingsboard上监控PLC数据"> </a>  
-
 ### 3.2 在Thingsboard上监控PLC数据
 #### 3.2.1 配置Thingsboard
-Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，您也可以按照[参考流程](#Thingsboard参考流程)进行测试。
+Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，您也可以按照[参考流程]()进行测试。
 
 #### 3.2.2 配置云服务
 进入“边缘计算>>PLC Supervisor>>云服务”页面，勾选启用云服务并配置相应的MQTT连接参数，配置完成后点击提交。
 - 服务器地址：`demo.thingsboard.io`
 - 端口号：1883
 - MQTT客户端ID：任一唯一ID
-- MQTT用户名：Thingsboard设备的访问令牌，访问令牌获取方式见[传输PLC数据到Thingsboard设备](#传输PLC数据到Thingsboard设备)
+- MQTT用户名：Thingsboard设备的访问令牌，访问令牌获取方式见[Thingsboard设备令牌]()
 - MQTT密码：任意6~32位密码
 - 其余项使用默认配置即可  
 
-配置完成后如下图所示：  </br>
+配置完成后如下图所示：  
+
 ![](images/2020-02-28-17-38-08.png)
 
-提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义数据格式](#自定义数据格式)。
+提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义函数]()
 - 发布主题：
   - 主题：`v1/devices/me/telemetry`
   - Qos(MQTT)：1
@@ -322,16 +270,7 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
         mqtt_publish(tail[0], json.dumps(resp_data), 0) #调用mqtt_publish将响应数据发送给MQTT服务器
     ```
 
-<a id="附录"> </a>  
-
 ## 附录
-- [导入导出配置](#导入导出配置)
-- [自定义数据格式](#自定义数据格式)
-- [其他网关操作](#其他网关操作)
-- [Thingsboard参考流程](#Thingsboard参考流程)  
-
-<a id="导入导出配置"> </a>  
-
 ### 导入导出配置
 PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，您可以通过导入导出配置文件快速实现采集配置。各配置文件内容如下：
 - device.csv：设备配置文件,详细参数如下
@@ -342,7 +281,8 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - rack（仅Snap7设备）：设备机架号
   - slot（仅Snap7设备）：设备槽号
   - slave（仅Modbus设备）：从站地址
-  - byte_order（仅Modbus设备）：字节序  
+  - byte_order（仅Modbus设备）：字节序  </br>
+ &nbsp; 
 
   导出方式为PLC列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
@@ -351,9 +291,6 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 
   ![](images/2020-03-10-17-15-00.png)  
 
-  &nbsp;
-  </br>
-  
 - var.csv:变量配置文件，详细参数如下
   - var_name：变量名称
   - device：变量所属设备
@@ -369,18 +306,15 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - unit：单位
   - size：字符串长度
   - desc：描述
-  - group：所属分组  
+  - group：所属分组  </br>
+ &nbsp;
 
   导出方式为PLC列表页面的变量列表导出
   ![](images/2020-03-10-17-18-01.png)  
 
   示例配置如下：  
 
-  ![](images/2020-03-10-17-13-54.png)  
-
-  &nbsp;
-  </br>
-  
+  ![](images/2020-03-10-17-13-54.png)
 - group.csv:分组配置文件，详细参数如下
   - group_name：分组名称
   - polling_interval：采集间隔
@@ -393,16 +327,8 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   示例配置如下：  
 
   ![](images/2020-03-10-17-15-33.png)
-
-<a id="自定义数据格式"> </a>  
-
 ### 自定义数据格式
-- [发布](#发布)
-- [订阅](#订阅)  
-  
 您可使用云服务中的高级设置功能配置MQTT主题、上报数据等参数并支持使用Python语言自定义MQTT发布和订阅主题的数据上报、处理等逻辑。无需二次开发即可实现与多种纯MQTT服务器进行数据上传和下发。
-
-<a id="发布"> </a>  
 
 #### 发布
 自定义发布主题中包含以下项：
@@ -528,9 +454,6 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
       }
   ]
   ```
-
-<a id="订阅"> </a>  
-
 #### 订阅
 自定义订阅中包含以下项：
 - 订阅名称：自定义名称
@@ -621,21 +544,11 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
       mqtt_publish(topic, json.dumps(resp_data), 0) #调用mqtt_publish将响应数据发送给MQTT服务器
   ```
 
-<a id="其他网关操作"> </a>  
-
 ### 其他网关操作
 关于网关的其他常用操作请查看[IG500快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)或[IG900快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)。
-
-<a id="Thingsboard参考流程"> </a>  
-
-### Thingsboard参考流程
-- [添加设备和资产](#添加设备和资产)
-- [传输PLC数据到Thingsboard设备](#传输PLC数据到Thingsboard设备)
-- [配置可视化仪表板](#配置可视化仪表板)  
-   
-<a id="添加设备和资产"> </a>  
-
-#### 添加设备和资产
+### Thingsboard参考配置
+#### 添加设备和资产  
+  
 访问`https://demo.thingsboard.io/login`，输入登录账号和密码。如果未注册过账号则需要先注册账号后再登录。  
 
 ![](images/2020-02-26-16-27-53.png)  <br/>
@@ -652,7 +565,6 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 
   ![](images/2020-02-26-09-52-39.png)  
 &nbsp;
-</br>
 
 - 添加一个设备
 ![](images/2020-02-26-09-54-14.png)  
@@ -667,23 +579,15 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 ![](images/2020-02-26-09-56-57.png)  
 &nbsp;
 
-<a id="传输PLC数据到Thingsboard设备"> </a>  
+#### 传输PLC数据到设备  
   
-#### 传输PLC数据到Thingsboard设备
 资产和设备配置完成后，复制已添加设备的访问令牌并粘贴至网关的云服务页面的用户名参数中以将数据传输至Thingsboard中的Snap7设备。
 ![](images/2020-02-26-09-58-18.png)  
 
 随后可在设备的最新遥测中查看已上传的数据。
 ![](images/2020-02-26-10-38-50.png)
 
-<a id="配置可视化仪表板"> </a>  
-
-#### 配置可视化仪表板
-- [添加仪表板](#添加仪表板)
-- [添加趋势图](#添加趋势图)
-- [添加开关](#添加开关)
-<a id="添加仪表板"> </a>  
-
+#### 配置可视化仪表板  
 - 添加仪表板  
   
   点击添加仪表板，选择创建新的仪表板
@@ -707,11 +611,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 ![](images/2020-02-26-10-03-00.png)  
 
   保存后，为仪表板中添加部件。
-![](images/2020-02-26-10-03-23.png)  
-
-</br>
-
-<a id="添加趋势图"> </a>  
+![](images/2020-02-26-10-03-23.png)  </br>
 
 - 添加趋势图  
   
@@ -724,10 +624,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   ![](images/2020-02-26-10-15-50.png)  
 
   添加完成后如下图所示：
-![](images/2020-02-26-10-18-00.png)  
-</br>
-
-<a id="添加开关"> </a>  
+![](images/2020-02-26-10-18-00.png)  </br>
 
 - 添加开关  
   
