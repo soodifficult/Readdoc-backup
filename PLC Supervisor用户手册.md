@@ -326,8 +326,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - rack（仅Snap7设备）：设备机架号
   - slot（仅Snap7设备）：设备槽号
   - slave（仅Modbus设备）：从站地址
-  - byte_order（仅Modbus设备）：字节序  </br>
- &nbsp; 
+  - byte_order（仅Modbus设备）：字节序  
 
   导出方式为PLC列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
@@ -335,7 +334,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   示例配置如下：  
 
   ![](images/2020-03-10-17-15-00.png)  
-  
+
   &nbsp;
   </br>
   
@@ -354,8 +353,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - unit：单位
   - size：字符串长度
   - desc：描述
-  - group：所属分组  </br>
- &nbsp;
+  - group：所属分组  
 
   导出方式为PLC列表页面的变量列表导出
   ![](images/2020-03-10-17-18-01.png)  
@@ -682,8 +680,8 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 
   保存后，为仪表板中添加部件。
 ![](images/2020-02-26-10-03-23.png)  
+
 &nbsp;
-</br>
 
 - 添加趋势图  
   
