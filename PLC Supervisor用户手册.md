@@ -264,7 +264,7 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 配置完成后如下图所示：  </br>
 ![](images/2020-02-28-17-38-08.png)
 
-提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义函数]()
+提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义数据格式](#custom-data-format)。
 - 发布主题：
   - 主题：`v1/devices/me/telemetry`
   - Qos(MQTT)：1
