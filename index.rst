@@ -7,11 +7,8 @@
 =====================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: 开发者指南
+   :maxdepth: 1
+   :caption: 快速入门
 
-   开发手册/index
-   用户手册/index
    PLC Supervisor用户手册.md
-   PLC Supervisor用户手册-标题备份.md
 
