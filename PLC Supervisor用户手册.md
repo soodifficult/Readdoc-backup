@@ -443,7 +443,7 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
   - mqtt_publish：MQTT发布消息方法，用于将指定数据发送到相应的主题并返回发送结果：成功（True），失败（False）。方法参数包含：
     - topic：发送数据至该主题
     - payload：需要发送的数据
-    - qos：qos等级（1，2，3）
+    - qos：qos等级（0，1，2）
   - save_data：存储历史数据方法，采用队列的方式存储数据。方法参数包含：
     - data：需要存储的数据
     - group_name：组名
