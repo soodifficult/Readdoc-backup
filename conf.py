@@ -25,7 +25,6 @@ author = u'zhangning'
 
 # The short X.Y version
 version = u''
-formats: [epub]
 # The full version, including alpha/beta/rc tags
 release = u'0.0.1'
 
