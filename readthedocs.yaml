@@ -18,4 +18,8 @@ formats:
   - epub
   - htmlzip
 
-# Optionally set the version of Python and requirements required to build your docs
+
+sphinx:
+  builder: html
+  configuration: conf.py
+  fail_on_warning: true
