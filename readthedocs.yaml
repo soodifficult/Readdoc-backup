@@ -7,7 +7,9 @@ version: 2
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
+  builder: html
   configuration: null
+  fail_on_warning: true
 
 # Build documentation with MkDocs
 #mkdocs:
@@ -17,9 +19,3 @@ sphinx:
 formats: 
   - epub
   - htmlzip
-
-
-sphinx:
-  builder: html
-  configuration: conf.py
-  fail_on_warning: true
