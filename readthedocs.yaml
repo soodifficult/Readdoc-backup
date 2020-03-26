@@ -7,7 +7,7 @@ version: 2
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
-  configuration: Readdoc-backup/conf.py
+  configuration: null
 
 # Build documentation with MkDocs
 #mkdocs:
