@@ -745,4 +745,3 @@ PLC Supervisor的数据采集配置总共包含三个CSV格式的配置文件，
 ![](images/2020-02-26-10-22-59.png)  
 
 
-![](images/timg.gif)
