@@ -11,3 +11,4 @@
    :caption: 快速入门
 
    PLC Supervisor用户手册.md
+   IG902快速使用手册.md
