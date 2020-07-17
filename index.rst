@@ -13,3 +13,4 @@
    PLC Supervisor用户手册.md
    IG902快速使用手册.md
    IG500用户手册.md
+   API手册-CN.md
