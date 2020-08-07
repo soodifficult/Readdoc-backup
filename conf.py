@@ -15,7 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_markdown_tables
+import sphinx-markdown-tables
 
 
 # -- Project information -----------------------------------------------------
